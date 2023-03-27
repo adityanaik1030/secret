@@ -39,15 +39,12 @@ const User = new mongoose.model("User", userSchema)
 app.get("/", function(req,res){
     res.render("home");
 })
-
 app.get("/login", function(req,res){
     res.render("login");
 })
-
 app.get("/register", function(req,res){
     res.render("register");
 })
-
 
 app.post("/register", function(req,res){
     const newUser = new User({
@@ -62,8 +59,6 @@ app.post("/register", function(req,res){
             console.log(err);
         })    
 });
-
-
 app.post("/login", function(req,res){
     const username = req.body.username;
     const password = req.body.password;
